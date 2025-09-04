@@ -12,4 +12,17 @@
 
 /* Animationen */
 .leaflet-tile-container { transition: opacity 0.3s ease; }
+
 .supercell-circle { transition: opacity 0.3s ease; }
+
+/* Set full height for page and map */
+html, body, main {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the map container size */
+#map {
+  height: 80vh;
+  width: 100%;
