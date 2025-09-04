@@ -8,7 +8,8 @@ for($i=0;$i<$steps;$i++){
   $uv=getWindUV($track[$i][0],$track[$i][1]);
   $lat1=$track[$i][0] + $uv['v']*$dt/111000;
   $lon1=$track[$i][1] + $uv['u']*$dt/(111000*cos(deg2rad($track[$i][0])));
-  $track[]=[$lat1,$lon1];
+    $track[] = [$lat1, $lon1];
 }
 header('Content-Type: application/json');
+
 echo json_encode($track);
