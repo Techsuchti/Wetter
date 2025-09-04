@@ -1,0 +1,15 @@
+/* Layer-Menü */
+#layerMenu {
+  background: #222;
+  color: #eee;
+  padding: .5em 1em;
+  font-size: .9em;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+#layerMenu label { cursor: pointer; }
+
+/* Animationen */
+.leaflet-tile-container { transition: opacity 0.3s ease; }
+.supercell-circle { transition: opacity 0.3s ease; }

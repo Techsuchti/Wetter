@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tornado Widget</title>
+  <style>
+    body{margin:0;font:16px/1.4 system-ui;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;height:100vh}
+    .risk{font-size:3em;font-weight:bold}
+    .risk.high{color:#f33}
+  </style>
+</head>
+<body>
+  <div class="risk" id="risk">–</div>
+  <script>
+    navigator.geolocation.getCurrentPosition(p=>{
+      fetch('/backend/modules/summary.php?lat='+p.coords.lat+'&lon='+p.coords.lon)
+        .then(r=>r.json())
+        .then(d=>{
+          document.getElementById('risk').textContent=d.risk+' %';
+          document.body.className=d.risk>50?'high':'';
+        });
+    });
+  </script>
+</body>
+</html>
